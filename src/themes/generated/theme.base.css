@@ -63,12 +63,12 @@
   color: #242424;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-theme-fluent-typography input,
 .dx-theme-fluent-typography textarea {
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-theme-fluent-typography h1 {
@@ -1209,7 +1209,7 @@
   color: #242424;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-widget,
@@ -1232,7 +1232,7 @@
 }
 .dx-widget input,
 .dx-widget textarea {
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-state-disabled .dx-widget,
@@ -1273,7 +1273,7 @@
   color: #242424;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
   padding: 0;
   display: flex;
@@ -1322,7 +1322,7 @@
 }
 .dx-field input,
 .dx-field textarea {
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-field-label i {
@@ -4540,7 +4540,7 @@
   color: #242424;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-overlay-wrapper,
@@ -4568,7 +4568,7 @@
 }
 .dx-overlay-wrapper input,
 .dx-overlay-wrapper textarea {
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-validationsummary-item {
@@ -12980,12 +12980,12 @@
   color: #242424;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-datagrid-column-chooser input,
 .dx-datagrid-column-chooser textarea {
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-datagrid-column-chooser.dx-datagrid-column-chooser-mode-drag .dx-popup-content {
@@ -15483,12 +15483,12 @@ input.dx-hidden {
   color: #242424;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-treelist-column-chooser input,
 .dx-treelist-column-chooser textarea {
-  font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+   font-family: "Inter", sans-serif;
   line-height: 1.428571;
 }
 .dx-treelist-column-chooser.dx-treelist-column-chooser-mode-drag .dx-popup-content {
