@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useContext,
 } from "react";
-import { TreeView } from "devextreme-react/tree-view";
+import { Item, TreeView } from "devextreme-react/tree-view";
 import * as events from "devextreme/events";
 import { navigation, navigationTwo } from "../../app-navigation";
 import { useNavigation } from "../../contexts/navigation";
@@ -13,20 +13,28 @@ import { useScreenSize } from "../../utils/media-query";
 import "./SideNavigationMenu.scss";
 import logo from "../../assets/images/logo-big.svg";
 import logoS from "../../assets/images/logo-small.svg";
-
+import searchIcon from "../../assets/images/icons/search-normal.svg";
 import { ThemeContext } from "../../theme";
 import AppFooter from "../AppFooter/AppFooter";
+import { Button, TextBox } from "devextreme-react";
 
 export default function SideNavigationMenu(props) {
-  const { children, selectedItemChanged, openMenu, compactMode, onMenuReady } =
-    props;
+  const {
+    children,
+    selectedItemChanged,
+    openMenu,
+    compactMode,
+    onMenuReady,
+    toggleMenu,
+    menuToggleEnabled,
+  } = props;
 
   const theme = useContext(ThemeContext);
   const { isLarge } = useScreenSize();
   function normalizePath() {
     return navigation.map((item) => ({
       ...item,
-      expanded: isLarge,
+      expanded: false,
       path: item.path && !/^\//.test(item.path) ? `/${item.path}` : item.path,
     }));
   }
@@ -122,6 +130,11 @@ export default function SideNavigationMenu(props) {
       <div className='user-info'>
         <h2>Hi, Zahidul Islam</h2>
         <p>Welcome to your Ignite CTRM Management Dashboard</p>
+      </div>
+
+      <div className='search'>
+        <TextBox placeholder='Search...' className='search-box' />
+        <img src={searchIcon} alt='' />
       </div>
       {children}
       <div className='sidebar'>

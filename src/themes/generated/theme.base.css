@@ -20348,6 +20348,7 @@ input.dx-hidden {
   width: 100%;
   height: 100%;
   top: 0;
+  background: #F5F9FF;
 }
 .dx-drawer-shader {
   z-index: 1000;

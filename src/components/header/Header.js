@@ -32,7 +32,7 @@ export default function Header({ menuToggleEnabled, title, toggleMenu }) {
         <Item location={"after"}>
           <div class='menu-bar'>
             <ThemeSwitcher />
-            <button class='icon-button'>
+            <button class='icon-button messages-button'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='24'
@@ -59,7 +59,7 @@ export default function Header({ menuToggleEnabled, title, toggleMenu }) {
               </svg>
             </button>
 
-            <button class='icon-button'>
+            <button class='icon-button notifications-button'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='24'

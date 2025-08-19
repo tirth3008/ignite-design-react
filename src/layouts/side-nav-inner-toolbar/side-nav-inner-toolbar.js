@@ -13,7 +13,7 @@ import { useMenuPatch } from "../../utils/patches";
 export default function SideNavInnerToolbar({ title, children }) {
   const scrollViewRef = useRef(null);
   const navigate = useNavigate();
-  const { isXSmall, isLarge } = useScreenSize();
+  const { isXSmall, isLarge, isMedium, isSmall } = useScreenSize();
   const [patchCssClass, onMenuReady] = useMenuPatch();
   const [menuStatus, setMenuStatus] = useState(
     isLarge ? MenuStatus.Opened : MenuStatus.Closed
@@ -69,7 +69,7 @@ export default function SideNavInnerToolbar({ title, children }) {
         className={["drawer", patchCssClass].join(" ")}
         position={"before"}
         closeOnOutsideClick={onOutsideClick}
-        openedStateMode={isLarge ? "shrink" : "overlap"}
+        openedStateMode={isLarge || isMedium || isSmall ? "shrink" : "overlap"}
         revealMode={isXSmall ? "slide" : "expand"}
         minSize={isXSmall ? 0 : 110}
         maxSize={280}

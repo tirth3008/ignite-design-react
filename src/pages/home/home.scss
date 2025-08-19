@@ -47,10 +47,10 @@
 .quick-links {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #1a2129;
+  background: var(--base-bg);
   padding: 16px;
   h4 {
-    color: var(--Neutral-Colors-04, #fff);
+    color: var(--base-text-color);
     font-size: 20px !important;
     font-style: normal;
     font-weight: 600;
@@ -79,7 +79,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--Neutral-Colors-04, #fff) !important;
+    color: var(--base-text-color) !important;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -88,11 +88,34 @@
   }
 }
 
+.dx-swatch-light .quick-links {
+  ul li {
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    a {
+      img.credit-icon {
+        filter: brightness(100) invert(100) !important;
+      }
+    }
+    &:hover {
+      border-radius: 6px;
+      background: var(--Primary-Colors-02, #2775ff);
+      border-color: transparent;
+      color: #fff !important;
+      a {
+        color: #fff !important;
+      }
+      img.credit-icon {
+        filter: brightness(100) invert(0) !important;
+      }
+    }
+  }
+}
+
 /* notifications */
 .notifications {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #1a2129;
+  background: var(--base-bg);
   padding: 16px;
   margin-top: 30px;
   .notifications-header {
@@ -119,6 +142,13 @@
   }
 }
 
+@media (max-width: 1199px) {
+  .notifications .notification-cards {
+    max-height: none;
+    height: 100%;
+    padding-right: 0;
+  }
+}
 .notification-cards::-webkit-scrollbar {
   width: 4px;
 }
@@ -186,7 +216,7 @@
 }
 
 .sec-title__title {
-  color: var(--Neutral-Colors-04, #fff);
+  color: var(--base-text-color);
   font-size: 20px !important;
   font-style: normal;
   font-weight: 500;
@@ -197,7 +227,7 @@
 .chart-card {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #1a2129 !important;
+  background: var(--base-bg);
   padding: 16px 20px 30px;
   position: relative;
   height: 100%;
@@ -212,8 +242,7 @@
 
 .chart-header h3 {
   margin: 0;
-  color: var(--Neutral-Colors-04, #fff);
-
+  color: var(--base-text-color);
   font-size: 20px !important;
   font-style: normal;
   font-weight: 600;
@@ -258,6 +287,9 @@
 .dx-swatch-dark .dx-box-item-content {
   gap: 20px;
 }
+.dx-swatch-light .dx-box-item-content {
+  gap: 20px;
+}
 
 .dx-swatch-dark .dx-texteditor.dx-editor-outlined {
   background-color: transparent;
@@ -285,4 +317,50 @@
 
 .dx-swatch-dark .dx-scrollable-wrapper {
   padding-bottom: 50px;
+}
+
+.dx-swatch-light {
+  .chart-icons span {
+    border: 1px solid #c0c4cf;
+    svg {
+      path {
+        stroke: #3d3d3d;
+      }
+    }
+  }
+  .linechart-container {
+    .year {
+      p {
+        color: #1a2129;
+      }
+    }
+  }
+  .notification-card {
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    a {
+      svg {
+        path {
+          stroke: #1a2129;
+        }
+      }
+    }
+    .card-header > div {
+      color: #1a2129;
+    }
+    .card-body {
+      p {
+        color: #1a2129;
+      }
+    }
+  }
+  .dx-datagrid-headers {
+    background-color: #9c9d9d !important;
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    color: #fff;
+  }
+}
+
+.dx-swatch-dark .dx-drawer-content {
+  background: #101820;
 }

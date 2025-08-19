@@ -1,6 +1,7 @@
 @use "../../dx-styles.scss" as *;
 
 header {
+  // background-color: #1a2129;
   background-color: var(--base-bg);
 }
 
@@ -35,7 +36,7 @@ header {
   padding: 0 40px;
 
   .screen-x-small & {
-    padding: 0 20px;
+    padding: 0 0 20px;
   }
 }
 
@@ -70,6 +71,9 @@ header {
   padding: 5px 10px;
 
   width: fit-content;
+  .dx-button {
+    border-radius: 50%;
+  }
   .icon-button {
     width: 36px;
     height: 36px;
@@ -86,5 +90,55 @@ header {
       background-color: #2a2a2e;
       color: white;
     }
+  }
+}
+
+.dx-swatch-light {
+  header {
+    box-shadow: 2px 10px 40px 0 rgba(0, 0, 0, 0.06);
+  }
+  .header-component .search .search-box {
+    border: 1px solid #dbdbdb !important;
+  }
+  .menu-bar {
+    .dx-button {
+      background: var(--Colors-Primary-White, #fff);
+      box-shadow: 0 4px 16px 0 rgba(0, 153, 112, 0.08);
+      &:hover {
+        background: #929292;
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .menu-bar .icon-button {
+    background: var(--Colors-Primary-White, #fff);
+    box-shadow: 0 4px 16px 0 rgba(0, 153, 112, 0.08);
+  }
+  .menu-bar .icon-button.messages-button svg path {
+    fill: var(--Colors-Primary-Black, #242424);
+  }
+  .menu-bar .icon-button.notifications-button svg path {
+    stroke: var(--Colors-Primary-Black, #242424);
+  }
+  .menu-bar .icon-button:hover {
+    background: #929292;
+  }
+  .menu-bar .icon-button.messages-button:hover svg path {
+    fill: #fff;
+  }
+  .menu-bar .icon-button.notifications-button:hover svg path {
+    stroke: #fff;
+  }
+}
+
+@media (max-width: 575px) {
+  .menu-bar {
+    gap: 10px;
+  }
+  .menu-bar .icon-button {
+    height: 28px;
+    width: 28px;
   }
 }

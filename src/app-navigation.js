@@ -476,46 +476,146 @@ export const navigation = [
     text: "User Management",
     path: "/user-management",
     icon: UserManagementIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/profile",
+        items: [
+          {
+            text: "Profile",
+            path: "/new-profile",
+          },
+          {
+            text: "Tasks",
+            path: "/new-tasks",
+          },
+        ],
+      },
+      {
+        text: "Tasks",
+        path: "/tasks",
+      },
+    ],
   },
   {
     text: "Batches / Files",
     path: "/batches",
     icon: BatchesIcon,
+    items: [
+      {
+        text: "Batches / Files",
+        path: "/batch",
+      },
+      {
+        text: "Batches / Files",
+        path: "/batch1",
+      },
+    ],
   },
   {
     text: "Products",
     path: "/products",
     icon: ProductsIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/Products",
+      },
+      {
+        text: "Tasks",
+        path: "/Products2",
+      },
+    ],
   },
   {
     text: "Manage Retailers",
     path: "/retailers",
     icon: ManageRetailersIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/retailers1",
+      },
+      {
+        text: "Tasks",
+        path: "/retailers2",
+      },
+    ],
   },
   {
     text: "Management",
     path: "/management",
     icon: ManagementIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/management1",
+      },
+      {
+        text: "Tasks",
+        path: "/management2",
+      },
+    ],
   },
   {
-    text: "Retailer Programs",
+    text: "Retailer Programs Retailer Programs ",
     path: "/programs",
     icon: RetailerProgramsIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/programs1",
+      },
+      {
+        text: "Tasks",
+        path: "/programs2",
+      },
+    ],
   },
   {
     text: "Payments",
     path: "/payments",
     icon: PaymentsIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/payments1",
+      },
+      {
+        text: "Tasks",
+        path: "/payments2",
+      },
+    ],
   },
   {
     text: "Other",
     path: "/other",
     icon: OtherIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/other1",
+      },
+      {
+        text: "Tasks",
+        path: "/other2",
+      },
+    ],
   },
   {
     text: "Other Admin Tasks",
     path: "/admin-tasks",
     icon: AdminTasksIcon,
+    items: [
+      {
+        text: "Profile",
+        path: "/admin-tasks1",
+      },
+      {
+        text: "Tasks",
+        path: "/admin-tasks2",
+      },
+    ],
   },
 ];
 

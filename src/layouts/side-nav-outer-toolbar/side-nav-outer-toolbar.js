@@ -7,6 +7,7 @@ import "./side-nav-outer-toolbar.scss";
 import { useScreenSize } from "../../utils/media-query";
 import { Template } from "devextreme-react/core/template";
 import { useMenuPatch } from "../../utils/patches";
+import { Button } from "devextreme-react";
 
 export default function SideNavOuterToolbar({ title, children }) {
   const scrollViewRef = useRef(null);
@@ -68,7 +69,7 @@ export default function SideNavOuterToolbar({ title, children }) {
         position={"before"}
         closeOnOutsideClick={onOutsideClick}
         openedStateMode={isLarge || isMedium || isSmall ? "shrink" : "overlap"}
-        revealMode={isXSmall ? "slide" : "expand"}
+        revealMode={isXSmall ? "expand" : "expand"}
         minSize={isXSmall ? 0 : 110}
         maxSize={280}
         shading={isLarge ? false : true}
@@ -96,6 +97,8 @@ export default function SideNavOuterToolbar({ title, children }) {
             selectedItemChanged={onNavigationChanged}
             openMenu={temporaryOpenMenu}
             onMenuReady={onMenuReady}
+            toggleMenu={toggleMenu}
+            menuToggleEnabled
           ></SideNavigationMenu>
         </Template>
       </Drawer>

@@ -8,6 +8,7 @@ export const ThemeSwitcher = () => {
   const onButtonClick = useCallback(() => {
     themeContext?.switchTheme();
   }, [themeContext]);
+console.log(themeContext?.theme , 'themeContext?.theme ');
 
   return <div>
             <Button
