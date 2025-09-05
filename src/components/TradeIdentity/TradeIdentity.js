@@ -1,10 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { ReactComponent as ArrowD } from "../../assets/images/icons/arreowD.svg";
 import { ReactComponent as ArrowU } from "../../assets/images/icons/arrowU.svg";
 import { SelectBox, DateBox, TextBox } from "devextreme-react";
 import "./TradeIdentity.scss";
 import Button from "../ui/Button";
 import { ReactComponent as reload } from "../../assets/images/icons/realods.svg";
+import Tabs from "devextreme-react/tabs";
+import {
+  orientations,
+  tabsText,
+  stylingModeLabel,
+  iconPositionLabel,
+  tabsIconAndText,
+  stylingModes,
+  iconPositions,
+  tabsIcon,
+  orientationLabel,
+} from "./tabData";
+const STRICT_WIDTH_CLASS = "strict-width";
 
 const TradeIdentity = () => {
   const [tradeType, setTradeType] = useState("Futures");
@@ -42,10 +55,110 @@ const TradeIdentity = () => {
     }
   }, [isCollapsed]);
 
+  const [orientation, setOrientation] = useState(orientations[0]);
+  const [stylingMode, setStylingMode] = useState(stylingModes[1]);
+  const [iconPosition, setIconPosition] = useState(iconPositions[0]);
+  const [showNavigation, setShowNavigation] = useState(true);
+  const [scrollContent, setScrollContent] = useState(true);
+  const [fullWidth, setFullWidth] = useState(false);
+  const [width, setWidth] = useState("auto");
+  const [rtlEnabled, setRtlEnabled] = useState(false);
+  const [widgetWrapperClasses, setWidgetWrapperClasses] = useState(
+    "widget-wrapper widget-wrapper-horizontal"
+  );
+  const enforceWidthConstraint = useCallback(
+    (shouldRestrictWidth) => {
+      const callback = (prevClasses) => {
+        const restClasses = prevClasses
+          .split(" ")
+          .filter((className) => className !== STRICT_WIDTH_CLASS)
+          .join(" ");
+        const strictWidthClass = shouldRestrictWidth ? STRICT_WIDTH_CLASS : "";
+        return `${restClasses} ${strictWidthClass}`;
+      };
+      setWidgetWrapperClasses(callback);
+    },
+    [setWidgetWrapperClasses]
+  );
+  const stylingModeChanged = useCallback(
+    (e) => {
+      setStylingMode(e.value);
+    },
+    [setStylingMode]
+  );
+  const iconPositionChanged = useCallback(
+    (e) => {
+      setIconPosition(e.value);
+    },
+    [setIconPosition]
+  );
+  const orientationChanged = useCallback(
+    (e) => {
+      const isVertical = e.value === "vertical";
+      const callback = (prevClasses) => {
+        const restClasses = prevClasses
+          .split(" ")
+          .filter(
+            (className) =>
+              className !==
+              (isVertical
+                ? "widget-wrapper-horizontal"
+                : "widget-wrapper-vertical")
+          )
+          .join(" ");
+        return `${restClasses} widget-wrapper-${e.value}`;
+      };
+      setWidgetWrapperClasses(callback);
+      setOrientation(e.value);
+    },
+    [setOrientation, setWidgetWrapperClasses]
+  );
+  const showNavigationChanged = useCallback(
+    (e) => {
+      const shouldRestrictWidth = e.value || scrollContent;
+      enforceWidthConstraint(shouldRestrictWidth);
+      setShowNavigation(e.value);
+    },
+    [scrollContent, setShowNavigation, enforceWidthConstraint]
+  );
+  const scrollContentChanged = useCallback(
+    (e) => {
+      const shouldRestrictWidth = e.value || showNavigation;
+      enforceWidthConstraint(shouldRestrictWidth);
+      setScrollContent(e.value);
+    },
+    [showNavigation, setScrollContent, enforceWidthConstraint]
+  );
+  const fullWidthChanged = useCallback(
+    (e) => {
+      setFullWidth(e.value);
+      setWidth(e.value ? "100%" : "auto");
+    },
+    [setFullWidth, setWidth]
+  );
+  const rtlEnabledChanged = useCallback(
+    (e) => {
+      setRtlEnabled(e.value);
+    },
+    [setRtlEnabled]
+  );
+
   return (
     <div className="trade-identity-container trade-identity">
       <div className="tabs">
-        {tabs.map((tab, index) => (
+        <Tabs
+          id="withText"
+          width={width}
+          defaultSelectedIndex={0}
+          rtlEnabled={rtlEnabled}
+          dataSource={tabsText}
+          scrollByContent={scrollContent}
+          showNavButtons={showNavigation}
+          orientation={orientation}
+          stylingMode={stylingMode}
+          iconPosition={iconPosition}
+        />
+        {/* {tabs.map((tab, index) => (
           <button
             key={index}
             className="tab-button"
@@ -60,7 +173,7 @@ const TradeIdentity = () => {
           >
             {tab}
           </button>
-        ))}
+        ))} */}
       </div>
 
       <div>

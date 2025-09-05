@@ -473,7 +473,7 @@ export const navigation = [
     icon: DashboardIcon,
   },
   {
-    text: "User Management",
+    text: "User Management User Management",
     path: "/user-management",
     icon: UserManagementIcon,
     items: [
